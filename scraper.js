@@ -2,6 +2,8 @@ import R from 'ramda';
 import fs from 'fs';
 import Scraper from 'webscrape';
 import cheerio from 'cheerio';
+require("babel-core/register");
+require("babel-polyfill");
 
 const scraper = Scraper();
 
