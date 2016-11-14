@@ -72,16 +72,16 @@ async function getLinksFromPage(page) {
       pages = person;
     }));
   } else {
-    let sel_elems = [];
-    let used_ind = [];
-    for(let i = 0; i < 10; i++) {
-      let index = Math.floor(Math.random()*elems.length);
-      if(!~used_ind.indexOf(index)) {
-        used_ind.push(index);
-        sel_elems.push(elems[index]);
-      }
-    }
-    await Promise.all(sel_elems.map(async e => {
+    // let sel_elems = [];
+    // let used_ind = [];
+    // for(let i = 0; i < 10; i++) {
+    //   let index = Math.floor(Math.random()*elems.length);
+    //   if(!~used_ind.indexOf(index)) {
+    //     used_ind.push(index);
+    //     sel_elems.push(elems[index]);
+    //   }
+    // }
+    await Promise.all(elems.map(async e => {
       let href = $(e).attr('href');
       let links = await getLinksFromPage(href);
       pages = links;

@@ -152,7 +152,7 @@ var getLinksFromPage = function () {
   var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(page) {
     var _this2 = this;
 
-    var s, pages, $, elems, sel_elems, used_ind, i, index;
+    var s, pages, $, elems;
     return _regenerator2.default.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
@@ -214,23 +214,12 @@ var getLinksFromPage = function () {
             }()));
 
           case 12:
-            _context6.next = 19;
+            _context6.next = 16;
             break;
 
           case 14:
-            sel_elems = [];
-            used_ind = [];
-
-            for (i = 0; i < 10; i++) {
-              index = Math.floor(Math.random() * elems.length);
-
-              if (!~used_ind.indexOf(index)) {
-                used_ind.push(index);
-                sel_elems.push(elems[index]);
-              }
-            }
-            _context6.next = 19;
-            return Promise.all(sel_elems.map(function () {
+            _context6.next = 16;
+            return Promise.all(elems.map(function () {
               var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(e) {
                 var href, links;
                 return _regenerator2.default.wrap(function _callee5$(_context5) {
@@ -259,10 +248,10 @@ var getLinksFromPage = function () {
               };
             }()));
 
-          case 19:
+          case 16:
             return _context6.abrupt('return', pages);
 
-          case 20:
+          case 17:
           case 'end':
             return _context6.stop();
         }
